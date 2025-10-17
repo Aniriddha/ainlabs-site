@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIN Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.creator-name {
+    position: fixed;
+    right: 2rem;
+    top: 140px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #FF8C00;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 999;
+    text-align: right;
+    line-height: 1.8;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-cyan: #ffffff;
+            --border: #404040;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .hero {
+            margin-top: 100px;
+            padding: 6rem 2rem 4rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero .description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 1100px;
+            margin-bottom: 3rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .exp-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .exp-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-card .role {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .exp-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .exp-card li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .exp-card li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .personal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .personal-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .personal-card ul {
+            list-style: none;
+        }
+
+        .personal-card li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .personal-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .submit-btn {
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                gap: 1.5rem;
+            }
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="creator-name">
+   -- Created by (Ani) Aniriddha Wakchaure<br>
+    अनिरिद्ध वाकचौरे
+</div>
+    <nav>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div class="logo">AIN LABS</div>
+                           </div>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#articles" onclick="showSection('articles')">Articles & Events</a></li>
+                <li><a href="#personal" onclick="showSection('personal')">Personal</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+               <div class="tagline" style="font-size: 1.4rem; margin-top: 0.5rem;">Technical GTM for Early-Stage Founders • AI Product-Market Fit to Revenue</div>
+        
+        <div style="margin-top: 2rem; padding: 2rem; background: var(--bg-card); border-left: 3px solid var(--accent-cyan); border-radius: 4px;">
+            <div style="font-size: 1.2rem; color: var(--accent-cyan); font-weight: 600; margin-bottom: 1.5rem; font-family: 'Orbitron', sans-serif;">SECTORS & DEPLOYMENTS</div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/defense.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Defense, DOD & National Security</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/smartcities.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Smart Cities & Critical Infrastructure</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/drones.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Drones, UAMs, Submarines & Robotics</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/autonomous.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Autonomous Driving & Mobility</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/semiconductors.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Semiconductors & Consumer Electronics</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/industrial.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Industrial IoT, Sensors & Manufacturing</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/energy.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Energy & Power Generation</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/cloud.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Enterprise Cloud & SaaS</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/banking.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Banks & Financial Services</span>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 8px; overflow: hidden; height: 250px; cursor: pointer; border: 1px solid var(--border);">
+                    <img src="images/telecom.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 1.5rem;">
+                        <span style="color: #ffffff; font-size: 1.1rem; font-weight: 600;">Telecommunications & 5G</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            I partner with early-stage AI startups to accelerate revenue through technical go-to-market execution. Working directly with AI engineers and technical teams, I help refine products for market fit, validate enterprise use cases through hands-on POCs, and drive faster time-to-revenue.
+            <br><br>
+            My approach bridges engineering and commercial execution: I understand model capabilities, speak the language of technical teams, and translate that into enterprise value propositions that close deals. From product positioning with founding engineers to connecting teams with strategic VCs and enterprise partners, I help startups move from technical innovation to revenue-generating deployments.
+        </div>
+
+        <div class="tech-stack">
+            <div class="tech-pill">Vision AI</div>
+            <div class="tech-pill">Speech AI</div>
+            <div class="tech-pill">LLMs & Agentic Systems</div>
+            <div class="tech-pill">Edge Deployment</div>
+            <div class="tech-pill">Enterprise POCs</div>
+            <div class="tech-pill">Strategic Partnerships</div>
+            <div class="tech-pill">0→1 GTM</div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 5rem;">Recent Experience</h2>
+        <div class="experience-grid">
+            <div class="exp-card">
+                <h3>Reka AI</h3>
+                <div class="role">Global Sales & Partnerships Lead | Series A ($180M)</div>
+                <ul>
+                    <li>Led technical GTM for Vision Agent and Speech Agent across DOD, smart cities, and critical infrastructure</li>
+                    <li>Built strategic partnerships with NVIDIA, Dell, HPE, Qualcomm, ARM driving multi-million dollar deployments</li>
+                    <li>Architected POCs for intrusion detection, traffic management, predictive maintenance with engineering teams</li>
+                    <li>Represented Reka at global events, conducting technical demos and workshops</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <h3>Renesas Electronics</h3>
+                <div class="role">Key Account Manager - Apple</div>
+                <ul>
+                    <li>Generated $35M+ in opportunities, closed $15M+ in revenue across AirPods, Vision Pro, Apple Watch</li>
+                    <li>Led technical discussions with Apple engineering teams on IoT solutions and mixed-signal power ICs</li>
+                    <li>Streamlined supply chain reducing lead times by 45% from prototype to mass production</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 5rem;">Core Technologies & Solutions</h2>
+        <div class="experience-grid">
+            <div class="exp-card">
+                <h3>Vision Agent</h3>
+                <ul>
+                    <li>Next-gen proactive video monitoring with real-time multimodal reasoning</li>
+                    <li>Natural-language search and Q&A - interact like a human surveillance agent</li>
+                    <li>Privacy-preserving identification via posture, gait (no facial recognition required)</li>
+                    <li>100× faster than human review with deep contextual insights</li>
+                    <li>Rapid low-data customization using visual cues and plain English</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <h3>Speech Agent</h3>
+                <ul>
+                    <li>1B-parameter quantized model optimized for mobile/edge deployment</li>
+                    <li>High-accuracy transcription, translation, and Q&A at the edge</li>
+                    <li>Runs on devices like Samsung S24 (1GB model size)</li>
+                    <li>Outperforms traditional solutions in speed and accuracy</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <h3>Key Segments</h3>
+                <ul>
+                    <li><strong>DOD & National Security:</strong> Perimeter surveillance, drone + audio fusion, command-center situational awareness</li>
+                    <li><strong>Smart Cities & Infrastructure:</strong> Traffic management, accident detection, predictive maintenance</li>
+                    <li><strong>Media & Entertainment:</strong> Natural-language video indexing, automated transcription/translation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="hidden">
+        <h2 class="section-title">AI Projects & Experiments</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.2rem;">
+            Building 10 AI applications in 3 months - learning by doing. Each project explores different aspects of AI engineering: from data labeling to agentic systems.
+        </p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project 1: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 2: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 3: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 4: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 5: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 6: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 7: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 8: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 9: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 10: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 11: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 12: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 13: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 14: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 15: Coming Soon</h3>
+                <p>Description will be added</p>
+                <div class="project-links">
+                    <a href="#">Live Demo</a>
+                    <a href="#">
