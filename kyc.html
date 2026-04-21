@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ainlabs.tech · KYC Officer Portal</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f3;color:#1a1a1a;font-size:14px;}
+.lbl{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:#888;margin-bottom:4px;display:block;}
+input,select,textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;background:#fafafa;color:#1a1a1a;outline:none;}
+input:focus,select:focus,textarea:focus{border-color:#555;}
+select{cursor:pointer;}
+textarea{resize:vertical;min-height:60px;}
+button{font-family:inherit;cursor:pointer;}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px;}
+.bge{display:inline-flex;align-items:center;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:500;}
+.bok{background:#d1fae5;color:#065f46;}
+.bwn{background:#fef3c7;color:#92400e;}
+.ber{background:#fee2e2;color:#991b1b;}
+.bin{background:#dbeafe;color:#1e40af;}
+.flag{background:#fffbeb;border-left:2px solid #f59e0b;border-radius:0 6px 6px 0;padding:5px 9px;margin-bottom:4px;font-size:12px;color:#92400e;}
+.fc{background:#f9f9f7;border-radius:8px;padding:7px 9px;}
+.stile{background:#f9f9f7;border:1px solid #e5e5e5;border-radius:8px;padding:7px 9px;cursor:pointer;transition:border-color .15s;}
+.stile:hover{border-color:#999;}
+
+/* Login */
+#pg-login{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:32px 16px;}
+.login-box{width:100%;max-width:340px;}
+.login-title{text-align:center;margin-bottom:24px;}
+.login-title h1{font-size:22px;font-weight:600;color:#1a1a1a;}
+.login-title span{color:#888;}
+.login-title p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-top:3px;}
+.login-notice{background:#eff6ff;border-radius:8px;padding:8px 12px;margin-bottom:14px;font-size:12px;color:#1e40af;}
+#pin-err{font-size:12px;color:#991b1b;min-height:16px;margin-bottom:8px;text-align:center;}
+
+/* App */
+#pg-app{display:none;min-height:100vh;flex-direction:column;}
+.topbar{background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.topbar-brand{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;}
+.topbar-brand span{color:#888;font-weight:400;}
+.topbar-brand small{font-size:12px;color:#888;font-weight:400;}
+.logout-btn{background:transparent;border:1px solid #ddd;border-radius:8px;padding:4px 10px;font-size:12px;color:#888;}
+.logout-btn:hover{border-color:#999;color:#555;}
+.main{display:flex;flex:1;}
+
+/* LHS */
+.lhs{width:36%;min-width:220px;border-right:1px solid #e5e5e5;padding:16px;display:flex;flex-direction:column;gap:14px;background:#fff;}
+#dz{border:1.5px dashed #ddd;border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;}
+#dz:hover{border-color:#999;}
+#dz h3{font-size:13px;font-weight:500;color:#1a1a1a;margin-bottom:3px;}
+#dz p{font-size:12px;color:#888;}
+#fl{margin-top:6px;}
+.file-row{display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:#f9f9f7;border-radius:8px;margin-bottom:3px;border:1px solid #eee;}
+.file-row-info{overflow:hidden;flex:1;}
+.file-row-name{font-size:12px;color:#1a1a1a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.file-row-meta{font-size:10px;color:#aaa;}
+.file-row-rm{background:transparent;border:none;color:#dc2626;font-size:17px;line-height:1;padding:0 4px;}
+#abtn{width:100%;padding:9px;margin-top:6px;background:#f5f5f3;border:1px solid #ddd;border-radius:8px;font-size:13px;font-weight:500;color:#aaa;}
+#abtn.active{background:#fff;border-color:#555;color:#1a1a1a;}
+#abtn.active:hover{background:#1a1a1a;color:#fff;}
+.sd-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.stile-cat{font-size:10px;color:#aaa;margin-bottom:1px;}
+.stile-name{font-size:12px;font-weight:500;color:#1a1a1a;}
+
+/* RHS */
+.rhs{flex:1;padding:16px;background:#f5f5f3;overflow-y:auto;}
+#v-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:360px;text-align:center;}
+#v-load{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:360px;text-align:center;}
+#v-res{display:none;}
+.spinner{width:28px;height:28px;border:2px solid #e5e5e5;border-top-color:#555;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;}
+.tab-btn{padding:4px 11px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#888;font-size:12px;cursor:pointer;font-family:inherit;}
+.tab-btn.active{border:2px solid #3b82f6;background:#eff6ff;color:#1e40af;font-weight:500;}
+.rep-grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+.rep-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.xbtn{width:100%;padding:9px;background:transparent;border:1px solid #555;border-radius:8px;font-size:13px;font-weight:500;color:#1a1a1a;}
+.xbtn:hover{background:#1a1a1a;color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="pg-login">
+  <div class="login-box">
+    <div class="login-title">
+      <h1>ainlabs<span>.tech</span></h1>
+      <p>KYC Officer Portal</p>
+    </div>
+    <div class="card">
+      <div class="login-notice">Authorized bank officers only &nbsp;·&nbsp; PIN sent daily at 7:00 AM IST</div>
+      <label class="lbl">Daily access PIN</label>
+      <input id="pin" type="password" maxlength="6" placeholder="Enter PIN" style="letter-spacing:6px;text-align:center;font-size:18px;margin-bottom:4px;" onkeydown="if(event.key==='Enter')login()"/>
+      <div id="pin-err"></div>
+      <button onclick="login()" style="width:100%;padding:10px;background:#1a1a1a;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;">Access portal</button>
+    </div>
+    <p style="text-align:center;margin-top:12px;font-size:11px;color:#aaa;">RBI KYC Master Direction 2016 (updated 2023)</p>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="pg-app">
+  <div class="topbar">
+    <div class="topbar-brand">ainlabs<span>.tech</span> <small>| KYC Officer Portal</small></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span class="bge bin">Bank officer</span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- LHS -->
+    <div class="lhs">
+      <div>
+        <label class="lbl" style="margin-bottom:7px;">Upload from your computer</label>
+        <div id="dz" ondrop="drop(event)" ondragover="event.preventDefault();this.style.borderColor='#3b82f6'" ondragleave="this.style.borderColor='#ddd'" onclick="document.getElementById('fi').click()">
+          <h3>Drag files here</h3>
+          <p>or click to browse · any format</p>
+          <input id="fi" type="file" multiple accept="image/*,.pdf,.doc,.docx" onchange="pick(event)" style="display:none;"/>
+        </div>
+        <div id="fl"></div>
+        <button id="abtn" onclick="analyze()">Analyze documents</button>
+      </div>
+
+      <div>
+        <label class="lbl">Sample docs <span style="font-size:10px;text-transform:none;letter-spacing:0;color:#aaa;">click to simulate</span></label>
+        <div class="sd-grid" id="sdg"></div>
+      </div>
+    </div>
+
+    <!-- RHS -->
+    <div class="rhs">
+      <div id="v-empty">
+        <div style="width:40px;height:40px;border:1.5px dashed #ddd;border-radius:50%;margin:0 auto 14px;"></div>
+        <p style="font-size:14px;color:#888;margin-bottom:4px;">No documents analyzed yet</p>
+        <p style="font-size:12px;color:#aaa;">Upload files from your computer or click a sample doc</p>
+      </div>
+
+      <div id="v-load">
+        <div class="spinner"></div>
+        <p id="lmsg" style="font-size:14px;font-weight:500;margin-bottom:5px;">Analyzing...</p>
+        <p style="font-size:12px;color:#888;">Extracting fields · checking RBI compliance</p>
+      </div>
+
+      <div id="v-res">
+        <div id="tabs"></div>
+        <div id="det" class="card" style="margin-bottom:12px;background:#fff;"></div>
+        <div class="card" style="background:#fff;">
+          <label class="lbl" style="margin-bottom:10px;">Compliance report builder</label>
+          <div class="rep-grid2">
+            <div><label class="lbl">Bank name</label><input id="rb" placeholder="e.g. HDFC Bank"></div>
+            <div><label class="lbl">Branch IFSC</label><input id="ri" placeholder="e.g. HDFC0001234"></div>
+            <div><label class="lbl">Officer name</label><input id="ro"></div>
+            <div><label class="lbl">Customer name</label><input id="rc"></div>
+          </div>
+          <div class="rep-grid3">
+            <div><label class="lbl">Account type</label><select id="ra"><option>Savings</option><option>Current</option><option>NRE</option><option>NRO</option><option>Fixed Deposit</option></select></div>
+            <div><label class="lbl">Final risk</label><select id="rr"><option>Low</option><option>Medium</option><option>High</option></select></div>
+            <div><label class="lbl">Decision</label><select id="rd"><option>Approve</option><option>Reject</option><option>Hold</option><option>Escalate</option></select></div>
+          </div>
+          <div style="margin-bottom:10px;"><label class="lbl">Officer notes</label><textarea id="rn" placeholder="Compliance notes, exceptions, observations..."></textarea></div>
+          <button class="xbtn" onclick="xport()">Export compliance report (.txt)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PIN=(()=>{const d=new Date();return String(d.getDate()).padStart(2,'0')+String(d.getMonth()+1).padStart(2,'0');})();
+const SD=[{n:'PAN Card',c:'ID Proof'},{n:'Aadhaar Card',c:'ID Proof'},{n:'Passport',c:'ID Proof'},{n:'Voter ID',c:'ID Proof'},{n:'Utility Bill',c:'Address'},{n:'Rent Agreement',c:'Address'},{n:'Bank Statement',c:'Financial'},{n:'Salary Slip',c:'Financial'},{n:'ITR Copy',c:'Financial'},{n:'CKYC Form',c:'Registry'}];
+let files=[],results=[],ai=0,fid=0;
+
+function login(){
+  if(document.getElementById('pin').value===PIN){
+    document.getElementById('pg-login').style.display='none';
+    document.getElementById('pg-app').style.display='flex';
+    renderSD();
+  }else{
+    document.getElementById('pin-err').textContent='Invalid PIN. Check your registered email.';
+    document.getElementById('pin').value='';
+  }
+}
+
+function logout(){
+  document.getElementById('pg-app').style.display='none';
+  document.getElementById('pg-login').style.display='flex';
+  document.getElementById('pin').value='';
+  document.getElementById('pin-err').textContent='';
+  files=[];results=[];
+  document.getElementById('fl').innerHTML='';
+  se();
+}
+
+function drop(e){e.preventDefault();document.getElementById('dz').style.borderColor='#ddd';addF(Array.from(e.dataTransfer.files));}
+function pick(e){addF(Array.from(e.target.files));e.target.value='';}
+function addF(list){list.forEach(f=>files.push({id:++fid,file:f,name:f.name,size:f.size,type:f.type,sample:false}));rfl();ubtn();}
+function addS(d){const f=new File([`SAMPLE:${d.n}`],`${d.n.replace(/\s/g,'_')}.txt`,{type:'text/plain'});files.push({id:++fid,file:f,name:`${d.n} (sample)`,size:0,type:'text/plain',sample:true,sd:d});rfl();ubtn();}
+function remF(id){files=files.filter(f=>f.id!==id);rfl();ubtn();}
+
+function rfl(){
+  document.getElementById('fl').innerHTML=files.map(f=>`
+    <div class="file-row">
+      <div class="file-row-info">
+        <div class="file-row-name">${f.name}</div>
+        <div class="file-row-meta">${f.sample?'Sample doc':Math.round(f.size/1024)+'KB'}</div>
+      </div>
+      <button class="file-row-rm" onclick="remF(${f.id})">×</button>
+    </div>`).join('');
+}
+
+function ubtn(){
+  const b=document.getElementById('abtn');
+  if(files.length){b.className='active';b.textContent=`Analyze ${files.length} file${files.length>1?'s':''}`;b.disabled=false;}
+  else{b.className='';b.textContent='Analyze documents';b.disabled=true;}
+}
+
+function renderSD(){
+  document.getElementById('sdg').innerHTML=SD.map(d=>`
+    <div class="stile" onclick='addS(${JSON.stringify(d)})'>
+      <div class="stile-cat">${d.c}</div>
+      <div class="stile-name">${d.n}</div>
+    </div>`).join('');
+}
+
+function se(){document.getElementById('v-empty').style.display='flex';document.getElementById('v-load').style.display='none';document.getElementById('v-res').style.display='none';}
+function sl(){document.getElementById('v-empty').style.display='none';document.getElementById('v-load').style.display='flex';document.getElementById('v-res').style.display='none';}
+function sr(){document.getElementById('v-empty').style.display='none';document.getElementById('v-load').style.display='none';document.getElementById('v-res').style.display='block';}
+
+const tb64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(f);});
+const PR=`You are an RBI KYC compliance AI (Master Direction 2016, updated 2023). Return ONLY valid JSON with no markdown and no backticks:\n{"documentType":"string","customerName":"string or null","documentNumber":"masked, last 4 visible, or null","dateOfBirth":"DD/MM/YYYY or null","address":"string or null","riskCategory":"Low|Medium|High","complianceStatus":"Compliant|Non-Compliant|Needs Review","ckycEligible":true,"flags":["array of specific RBI compliance issues found"],"recommendedAction":"string","confidence":"High|Medium|Low"}`;
+
+async function analyze(){
+  if(!files.length)return;
+  const b=document.getElementById('abtn');b.disabled=true;b.textContent='Analyzing...';
+  sl();results=[];
+  for(let i=0;i<files.length;i++){
+    const item=files[i];
+    document.getElementById('lmsg').textContent=`Analyzing ${i+1} of ${files.length}: ${item.name}`;
+    let content;
+    if(item.sample){content=[{type:'text',text:`Simulate a realistic KYC analysis for document type: ${item.sd.n} (category: ${item.sd.c}). Use a fictional Indian bank customer with medium-risk profile. ${PR}`}];}
+    else if(item.type.startsWith('image/')){const b64=await tb64(item.file);content=[{type:'image',source:{type:'base64',media_type:item.type,data:b64}},{type:'text',text:PR}];}
+    else{content=[{type:'text',text:`File: ${item.name} (type: ${item.type})\n${PR}\nNote: Non-image file submitted. Set confidence to Low and flag for manual in-person verification.`}];}
+    try{
+      const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,messages:[{role:'user',content}]})});
+      const data=await resp.json();
+      const txt=(data.content?.find(c=>c.type==='text')?.text||'{}').replace(/```(?:json)?/g,'').trim();
+      results.push({fn:item.name,...JSON.parse(txt)});
+    }catch(e){
+      results.push({fn:item.name,documentType:'Unknown',riskCategory:'Medium',complianceStatus:'Needs Review',ckycEligible:false,flags:['Analysis error — manual review required'],recommendedAction:'Manual review',confidence:'Low'});
+    }
+  }
+  const first=results.find(r=>r.customerName);
+  if(first){
+    document.getElementById('rc').value=first.customerName||'';
+    document.getElementById('rr').value=results.some(r=>r.riskCategory==='High')?'High':results.some(r=>r.riskCategory==='Medium')?'Medium':'Low';
+  }
+  ai=0;rres();ubtn();
+}
+
+function bg(cls,t){return`<span class="bge ${cls}">${t}</span>`;}
+
+function rres(){
+  sr();
+  document.getElementById('tabs').innerHTML=results.map((r,i)=>`<button class="tab-btn${i===ai?' active':''}" onclick="sat(${i})">${r.fn.length>22?r.fn.slice(0,20)+'…':r.fn}</button>`).join('');
+  rdet();
+}
+
+function sat(i){ai=i;rres();}
+
+function rdet(){
+  const r=results[ai];if(!r)return;
+  const flds=[['Name',r.customerName],['Doc number',r.documentNumber],['Date of birth',r.dateOfBirth],['CKYC eligible',r.ckycEligible!=null?(r.ckycEligible?'Yes':'No'):null],['Confidence',r.confidence],['Action',r.recommendedAction]].filter(([,v])=>v!=null);
+  const riskBg={Low:'#d1fae5',Medium:'#fef3c7',High:'#fee2e2'};
+  const riskTx={Low:'#065f46',Medium:'#92400e',High:'#991b1b'};
+  const stBg={Compliant:'#d1fae5','Non-Compliant':'#fee2e2','Needs Review':'#fef3c7'};
+  const stTx={Compliant:'#065f46','Non-Compliant':'#991b1b','Needs Review':'#92400e'};
+  const risk=r.riskCategory||'Medium';const st=r.complianceStatus||'Needs Review';
+  document.getElementById('det').innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+      <div>
+        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">${r.documentType||'Unknown document'}</div>
+        <div style="font-size:11px;color:#888;margin-top:2px;">${r.fn}</div>
+      </div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;">
+        <span class="bge" style="background:${riskBg[risk]};color:${riskTx[risk]}">${risk} risk</span>
+        <span class="bge" style="background:${stBg[st]};color:${stTx[st]}">${st}</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+      ${flds.map(([l,v])=>`<div class="fc"><div class="lbl">${l}</div><div style="font-size:13px;color:#1a1a1a;">${v}</div></div>`).join('')}
+    </div>
+    ${r.address?`<div class="fc" style="margin-top:7px;"><div class="lbl">Address</div><div style="font-size:13px;color:#1a1a1a;">${r.address}</div></div>`:''}
+    ${r.flags&&r.flags.length?`<div style="margin-top:10px;"><div class="lbl" style="margin-bottom:5px;">Compliance flags</div>${r.flags.map(f=>`<div class="flag">${f}</div>`).join('')}</div>`:''}`;
+}
+
+function xport(){
+  const g=id=>document.getElementById(id).value;
+  const sep='='.repeat(50);
+  const lines=[
+    'RBI KYC COMPLIANCE REPORT',
+    `Date: ${new Date().toLocaleString('en-IN')} IST`,
+    'ainlabs.tech · KYC Officer Portal',sep,'',
+    'BANK DETAILS',`Bank: ${g('rb')||'—'}`,`Branch IFSC: ${g('ri')||'—'}`,`Officer: ${g('ro')||'—'}`,sep,'',
+    'CUSTOMER DETAILS',`Name: ${g('rc')||'—'}`,`Account type: ${g('ra')}`,`Final risk classification: ${g('rr')}`,sep,'',
+    'DOCUMENT ANALYSIS',
+    ...results.flatMap(r=>['',`File: ${r.fn}`,`Document type: ${r.documentType||'—'}`,`Compliance status: ${r.complianceStatus||'—'}`,`Risk category: ${r.riskCategory||'—'}`,`CKYC eligible: ${r.ckycEligible?'Yes':'No'}`,`Flags: ${r.flags?.join('; ')||'None'}`,`Recommended action: ${r.recommendedAction||'—'}`]),
+    '',sep,'',
+    'OFFICER NOTES',g('rn')||'(none)','',
+    `FINAL DECISION: ${g('rd')}`,sep,'',
+    'Generated by ainlabs.tech KYC Officer Portal',
+    'Per RBI Master Direction on KYC 2016 (updated 2023)'
+  ];
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/plain'}));
+  a.download=`KYC_Report_${(g('rc')||'Report').replace(/\s+/g,'_')}_${new Date().toISOString().slice(0,10)}.txt`;
+  a.click();
+}
+</script>
+</body>
+</html>
