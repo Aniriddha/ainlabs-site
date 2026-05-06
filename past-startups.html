@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey | AIN Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.creator-name {
+    position: fixed;
+    right: 2rem;
+    top: 140px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #FF8C00;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 999;
+    text-align: right;
+    line-height: 1.8;
+}
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-cyan: #ffffff;
+            --border: #404040;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        nav a.active {
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--accent-cyan);
+            padding-bottom: 2px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        /* ── Era divider ── */
+        .era-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 4rem 0 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ── Startup cards ── */
+        .startup-card {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            transition: border-color 0.3s, transform 0.3s;
+            min-height: 300px;
+        }
+
+        .startup-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+
+        .startup-image-wrap {
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .startup-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .startup-img-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--border);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .startup-img-placeholder svg {
+            opacity: 0.35;
+        }
+
+        .startup-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .startup-period {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .startup-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .startup-role {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .startup-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .startup-bullets {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .startup-bullets li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .startup-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        /* ── Hover-to-play video ── */
+        .hover-media {
+            position: relative;
+        }
+
+        .hover-media .media-thumb,
+        .hover-media .media-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .hover-media .media-video { opacity: 0; }
+        .hover-media:hover .media-video { opacity: 1; }
+        .hover-media:hover .media-thumb { opacity: 0; }
+
+        /* ── Sketches / gallery row inside card ── */
+        .sketches-row {
+            grid-column: 1 / -1;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .sketches-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .sketches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .sketches-grid img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .sketches-grid img:hover {
+            border-color: var(--accent-cyan);
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 900px) {
+            .startup-card { grid-template-columns: 1fr; }
+            .startup-img-placeholder { min-height: 200px; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="creator-name">
+   -- Created by (Ani) Aniriddha Wakchaure<br>
+    अनिरिद्ध वाकचौरे
+</div>
+
+<nav>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">AIN LABS</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="index.html">Articles &amp; Events</a></li>
+            <li><a href="index.html">Personal</a></li>
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="past-startups.html" class="active">My Journey</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="hobbies.html">Hobbies &amp; Interests</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section style="margin-top: 80px;">
+    <h2 class="section-title">My Journey</h2>
+    <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 900px; line-height: 1.8; margin-bottom: 0.5rem;">
+        A career spanning industrial manufacturing in India to semiconductor giants and AI startups in Silicon Valley — 2006 to present.
+    </p>
+
+    <!-- ────────────── EARLY CAREER — INDIA ────────────── -->
+    <div class="era-label">Early Career — India</div>
+
+    <!-- Forbes Marshall [2006–2008] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap">
+            <div class="startup-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/forbes-marshall/
+            </div>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2006 — 2008</div>
+            <div class="startup-name">Forbes Marshall</div>
+            <div class="startup-role">[Add your role / title here]</div>
+            <p class="startup-desc">
+                Forbes Marshall is India's leading industrial process control and steam engineering company, headquartered in Pune. [Add a description of your work, responsibilities, and key learnings during this period.]
+            </p>
+            <ul class="startup-bullets">
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Eco Industries [2008–2010] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap hover-media">
+            <img class="media-thumb" src="images/eco-industries/Azura logos.jpg" alt="Eco Industries">
+            <video class="media-video" muted loop playsinline>
+                <source src="images/eco-industries/Video001.mp4" type="video/mp4">
+                <source src="images/eco-industries/Video002.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2008 — 2010</div>
+            <div class="startup-name">Eco Industries</div>
+            <div class="startup-role">[Add your role / title here]</div>
+            <p class="startup-desc">
+                [Add a description of your work at Eco Industries — what the company did, your role, and what you built or achieved here.]
+            </p>
+            <ul class="startup-bullets">
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Flamingo Industries [2013–2020] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap hover-media">
+            <img class="media-thumb" src="images/flamingo-industries/flame.jpg" alt="Flamingo Industries">
+            <video class="media-video" muted loop playsinline>
+                <source src="images/flamingo-industries/HD videos/DSC_1230.MOV">
+                <source src="images/flamingo-industries/HD videos/DSC_1231.MOV">
+                <source src="images/flamingo-industries/HD videos/DSC_1234.MOV">
+            </video>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2013 — 2020</div>
+            <div class="startup-name">Flamingo Industries</div>
+            <div class="startup-role">[Add your role / title here]</div>
+            <p class="startup-desc">
+                [Add a description of your work at Flamingo Industries — the packaged water plant operations, manufacturing scale, team size, and what you built over these seven years in Bhiwandi, Maharashtra.]
+            </p>
+            <ul class="startup-bullets">
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+            </ul>
+        </div>
+        <!-- Engineering sketches gallery -->
+        <div class="sketches-row">
+            <div class="sketches-label">Engineering Sketches & Designs</div>
+            <div class="sketches-grid">
+                <img src="images/flamingo-industries/Sketches/Steam Boiler.jpg" alt="Steam Boiler">
+                <img src="images/flamingo-industries/Sketches/Steam Boiler_02.jpg" alt="Steam Boiler 02">
+                <img src="images/flamingo-industries/Sketches/Single Bokhara.jpg" alt="Single Bokhara">
+                <img src="images/flamingo-industries/Sketches/Vikrant V500.jpg" alt="Vikrant V500">
+                <img src="images/flamingo-industries/Sketches/hot air dryer.jpg" alt="Hot Air Dryer">
+                <img src="images/flamingo-industries/Sketches/Double vessel stove.jpg" alt="Double Vessel Stove">
+                <img src="images/flamingo-industries/Sketches/water heater Sketch.jpg" alt="Water Heater Sketch">
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────────── TECH CAREER — UNITED STATES ────────────── -->
+    <div class="era-label">Tech Career — United States</div>
+
+    <!-- Micron Technology [2022–2023] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap">
+            <div class="startup-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/micron/
+            </div>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2022 — 2023</div>
+            <div class="startup-name">Micron Technology</div>
+            <div class="startup-role">[Add your role / title here]</div>
+            <p class="startup-desc">
+                Micron Technology is a global leader in memory and storage semiconductor solutions, known for DRAM, NAND, and NOR Flash products. [Add a description of your work, the team you worked with, and what you contributed.]
+            </p>
+            <ul class="startup-bullets">
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+                <li>[Add key achievement or responsibility]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Renesas Electronics [2023–2024] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap">
+            <div class="startup-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/renesas/
+            </div>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2023 — 2024</div>
+            <div class="startup-name">Renesas Electronics</div>
+            <div class="startup-role">Key Account Manager — Apple</div>
+            <p class="startup-desc">
+                Renesas Electronics is a world-leading semiconductor manufacturer. As Key Account Manager for Apple, managed one of the company's most strategic global relationships across consumer product lines including AirPods, Vision Pro, and Apple Watch.
+            </p>
+            <ul class="startup-bullets">
+                <li>Generated $35M+ in opportunities; closed $15M+ in revenue across AirPods, Vision Pro, and Apple Watch</li>
+                <li>Led technical discussions with Apple engineering teams on IoT solutions and mixed-signal power ICs</li>
+                <li>Streamlined supply chain, reducing lead times by 45% from prototype to mass production</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Reka AI [2024–2025] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap">
+            <div class="startup-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/reka/
+            </div>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2024 — 2025</div>
+            <div class="startup-name">Reka AI</div>
+            <div class="startup-role">Global Sales & Partnerships Lead | Series A ($180M)</div>
+            <p class="startup-desc">
+                Reka AI is a frontier multimodal AI company building Vision Agent and Speech Agent solutions for enterprise and defense deployments. Joined as an early GTM hire to build global revenue from the ground up.
+            </p>
+            <ul class="startup-bullets">
+                <li>Led technical GTM for Vision Agent and Speech Agent across DOD, smart cities, and critical infrastructure</li>
+                <li>Built strategic partnerships with NVIDIA, Dell, HPE, Qualcomm, and ARM driving multi-million dollar deployments</li>
+                <li>Architected POCs for intrusion detection, traffic management, and predictive maintenance with engineering teams</li>
+                <li>Represented Reka at global events, conducting technical demos and workshops</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Stealth Startup [2025–2026] -->
+    <div class="startup-card">
+        <div class="startup-image-wrap">
+            <div class="startup-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                </svg>
+                STEALTH
+            </div>
+        </div>
+        <div class="startup-content">
+            <div class="startup-period">2025 — 2026</div>
+            <div class="startup-name">Stealth Startup</div>
+            <div class="startup-role">Undisclosed</div>
+            <p class="startup-desc">
+                Currently operating in stealth mode. Details and announcements coming soon.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="https://linkedin.com/in/aniriddha-wakchaure" target="_blank">LinkedIn</a>
+        <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
+    </div>
+    <p style="color: var(--text-secondary);">© 2025 AIN Labs LLC</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.hover-media').forEach(el => {
+        const video = el.querySelector('.media-video');
+        if (!video) return;
+        el.addEventListener('mouseenter', () => video.play().catch(() => {}));
+        el.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+</script>
+</body>
+</html>

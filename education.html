@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | AIN Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.creator-name {
+    position: fixed;
+    right: 2rem;
+    top: 140px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #FF8C00;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 999;
+    text-align: right;
+    line-height: 1.8;
+}
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-cyan: #ffffff;
+            --border: #404040;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-cyan); }
+
+        nav a.active {
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--accent-cyan);
+            padding-bottom: 2px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        /* ── Education cards ── */
+        .edu-card {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            transition: border-color 0.3s, transform 0.3s;
+            min-height: 320px;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+
+        .edu-image-wrap {
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .edu-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .edu-img-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--border);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .edu-img-placeholder svg { opacity: 0.35; }
+
+        .edu-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .edu-degree-type {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-school {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .edu-university {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-degree {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .edu-bullets {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .edu-bullets li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .edu-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 900px) {
+            .edu-card { grid-template-columns: 1fr; }
+            .edu-img-placeholder { min-height: 220px; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="creator-name">
+   -- Created by (Ani) Aniriddha Wakchaure<br>
+    अनिरिद्ध वाकचौरे
+</div>
+
+<nav>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">AIN LABS</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="index.html">Articles &amp; Events</a></li>
+            <li><a href="index.html">Personal</a></li>
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="past-startups.html">My Journey</a></li>
+            <li><a href="education.html" class="active">Education</a></li>
+            <li><a href="hobbies.html">Hobbies &amp; Interests</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section style="margin-top: 80px;">
+    <h2 class="section-title">Education</h2>
+    <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 900px; line-height: 1.8; margin-bottom: 0.5rem;">
+        Engineering foundations from Mumbai, business acumen from UC Davis — bridging hardware and go-to-market strategy.
+    </p>
+
+    <!-- UC Davis -->
+    <div class="era-label" style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem; color: var(--text-secondary); letter-spacing: 3px; text-transform: uppercase; margin: 4rem 0 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);">Graduate</div>
+
+    <div class="edu-card">
+        <div class="edu-image-wrap">
+            <div class="edu-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/education/ucdavis/
+            </div>
+        </div>
+        <div class="edu-content">
+            <div class="edu-degree-type">STEM MBA</div>
+            <div class="edu-school">UC Davis Graduate School of Management</div>
+            <div class="edu-university">University of California, Davis</div>
+            <div class="edu-degree">Master of Business Administration (STEM MBA)</div>
+            <p class="edu-desc">
+                [Add a description of your MBA experience — key courses, concentrations, clubs, projects, or what drew you to UC Davis GSM. What skills and perspectives did you develop here?]
+            </p>
+            <ul class="edu-bullets">
+                <li>[Add highlight — e.g. concentration, thesis, club leadership]</li>
+                <li>[Add highlight — e.g. internship, case competition, or notable project]</li>
+                <li>[Add highlight — e.g. cohort, network, or key learning]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- KJ Somaiya -->
+    <div class="era-label" style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem; color: var(--text-secondary); letter-spacing: 3px; text-transform: uppercase; margin: 4rem 0 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);">Undergraduate</div>
+
+    <div class="edu-card">
+        <div class="edu-image-wrap">
+            <div class="edu-img-placeholder">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                Add photos to<br>images/education/kjsomaiya/
+            </div>
+        </div>
+        <div class="edu-content">
+            <div class="edu-degree-type">Bachelor of Engineering</div>
+            <div class="edu-school">K.J. Somaiya College of Engineering</div>
+            <div class="edu-university">Mumbai University</div>
+            <div class="edu-degree">BE in Electronics Engineering</div>
+            <p class="edu-desc">
+                [Add a description of your undergraduate experience at KJ Somaiya — key projects, labs, professors, or formative experiences that shaped your technical foundation in electronics engineering.]
+            </p>
+            <ul class="edu-bullets">
+                <li>[Add highlight — e.g. final year project, specialization, or lab work]</li>
+                <li>[Add highlight — e.g. extracurricular, technical competition, or society]</li>
+                <li>[Add highlight — e.g. internship, research, or key course]</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="https://linkedin.com/in/aniriddha-wakchaure" target="_blank">LinkedIn</a>
+        <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
+    </div>
+    <p style="color: var(--text-secondary);">© 2025 AIN Labs LLC</p>
+</footer>
+
+</body>
+</html>

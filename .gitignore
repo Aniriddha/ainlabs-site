@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+Thumbs.db
+
+# Large video files — host separately (Cloudinary, Vimeo, etc.)
+*.MOV
+*.mov
+*.wve
+
+# Temp Office files
+~$*

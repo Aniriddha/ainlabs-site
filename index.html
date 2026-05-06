@@ -439,6 +439,9 @@
                 <li><a href="#articles" onclick="showSection('articles')">Articles & Events</a></li>
                 <li><a href="#personal" onclick="showSection('personal')">Personal</a></li>
                 <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="past-startups.html">My Journey</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="hobbies.html">Hobbies & Interests</a></li>
             </ul>
         </div>
     </nav>
@@ -724,4 +727,65 @@
                 <p>Description will be added</p>
                 <div class="project-links">
                     <a href="#">Live Demo</a>
-                    <a href="#">
+                    <a href="#">GitHub</a>
+                    <a href="#">Technical Write-up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="hidden">
+        <h2 class="section-title">Articles & Events</h2>
+        <p style="color: var(--text-secondary); font-size: 1.2rem;">Coming soon — articles, talks, and events.</p>
+    </section>
+
+    <section id="personal" class="hidden">
+        <h2 class="section-title">Personal</h2>
+        <div class="personal-grid">
+            <div class="personal-card">
+                <h3>Interests</h3>
+                <ul>
+                    <li>Coming soon</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-form">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Your message"></textarea>
+            </div>
+            <button class="submit-btn">Send Message</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://linkedin.com/in/aniriddha-wakchaure" target="_blank">LinkedIn</a>
+            <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
+        </div>
+        <p style="color: var(--text-secondary);">© 2025 AIN Labs LLC</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+            const target = document.getElementById(id);
+            if (target) target.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+        showSection('home');
+    </script>
+</body>
+</html>
