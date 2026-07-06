@@ -130,6 +130,63 @@
             transition: color 0.3s;
         }
 
+        /* ── Horizontal timeline ── */
+        .timeline-strip {
+            display: flex;
+            align-items: flex-start;
+            overflow-x: auto;
+            margin: 2.5rem 0 0.5rem;
+            padding: 0.5rem 0 1rem;
+        }
+
+        .timeline-item {
+            flex: 1;
+            min-width: 105px;
+            position: relative;
+            text-align: center;
+            padding-top: 22px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item:first-child::before { left: 50%; }
+        .timeline-item:last-child::before { right: 50%; }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            border: 2px solid var(--bg-primary);
+        }
+
+        .timeline-year {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-co {
+            font-size: 0.76rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
         /* ── Era divider ── */
         .era-label {
             font-family: 'Source Serif 4', Georgia, serif;
@@ -377,12 +434,9 @@
         </div>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Articles &amp; Events</a></li>
-            <li><a href="index.html">Personal</a></li>
-            <li><a href="index.html">Contact</a></li>
             <li><a href="past-startups.html" class="active">My Journey</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="hobbies.html">Hobbies &amp; Interests</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -392,6 +446,42 @@
     <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 900px; line-height: 1.8; margin-bottom: 0.5rem;">
         A resilient tech entrepreneur with experience across mechanical, thermal, electronics, semiconductors, generative AI, media, robotics, and agentic AI — bringing a rare cross-disciplinary perspective to the future of physical AI. 2006 to present.
     </p>
+
+    <!-- Horizontal career timeline -->
+    <div class="timeline-strip">
+        <div class="timeline-item">
+            <div class="timeline-year">2006</div>
+            <div class="timeline-co">Forbes Marshall</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2008</div>
+            <div class="timeline-co">Eco Industries</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-co">Agasti Energy</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2013</div>
+            <div class="timeline-co">Flamingo Industries</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-co">Micron Technology</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-co">Renesas Electronics</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-co">Reka AI</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-co">Stealth AI Startup</div>
+        </div>
+    </div>
 
     <!-- ────────────── TECH CAREER — UNITED STATES ────────────── -->
     <div class="era-label">Tech Career — United States</div>
@@ -607,6 +697,7 @@
 
 <footer>
     <div class="footer-links">
+        <a href="education.html">Education</a>
         <a href="https://www.linkedin.com/in/aniriddha/" target="_blank">LinkedIn</a>
         <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
     </div>
