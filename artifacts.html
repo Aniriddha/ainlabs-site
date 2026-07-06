@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts | AIN Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,700&display=swap');
+
+.creator-name {
+    position: fixed;
+    right: 2rem;
+    top: 140px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.85rem;
+    color: #CC785C;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 999;
+    text-align: right;
+    line-height: 1.8;
+}
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #FAF9F5;
+            --bg-secondary: #F0EEE6;
+            --bg-card: #FFFFFF;
+            --text-primary: #141413;
+            --text-secondary: #63615A;
+            --accent-cyan: #CC785C;
+            --border: #E3E0D5;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 245, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-cyan); }
+
+        nav a.active {
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--accent-cyan);
+            padding-bottom: 2px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        /* ── Artifact cards ── */
+        .artifact-card {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .artifact-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+
+        .artifact-meta {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 0.95rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+            padding: 2.5rem 1.5rem;
+            border-right: 1px solid var(--border);
+            background: var(--bg-secondary);
+            line-height: 1.6;
+        }
+
+        .artifact-type {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 0.6rem;
+        }
+
+        .artifact-content {
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .artifact-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .artifact-venue {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .artifact-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .artifact-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: flex-start;
+            background: var(--accent-cyan);
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 6px;
+            transition: opacity 0.3s;
+        }
+
+        .artifact-download:hover { opacity: 0.85; }
+
+        @media (max-width: 900px) {
+            .artifact-card { grid-template-columns: 1fr; }
+            .artifact-meta {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="creator-name">
+   -- Created by (Ani) Aniriddha Wakchaure<br>
+    अनिरिद्ध वाकचौरे
+</div>
+
+<nav>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">AIN LABS</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="past-startups.html">My Journey</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="artifacts.html" class="active">Artifacts</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section style="margin-top: 80px;">
+    <h2 class="section-title">Artifacts</h2>
+    <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 900px; line-height: 1.8; margin-bottom: 3rem;">
+        Presentations, talks, and materials from my professional journey.
+    </p>
+
+    <!-- UC Davis MSBA presentation -->
+    <div class="artifact-card">
+        <div class="artifact-meta">
+            2025
+            <div class="artifact-type">Presentation · PPTX</div>
+        </div>
+        <div class="artifact-content">
+            <div class="artifact-title">Navigating AI Careers &amp; Go-To-Market Strategies</div>
+            <div class="artifact-venue">UC Davis — MSBA Program</div>
+            <p class="artifact-desc">
+                A presentation for UC Davis MSBA students on building a career in AI — covering the AI industry landscape, go-to-market strategy for AI products, and lessons from taking frontier AI solutions to enterprise and defense customers.
+            </p>
+            <a class="artifact-download" href="artifacts/Navigating-AI-Careers-and-GTM-Strategies_UC-Davis-MSBA.pptx" download>⬇ Download Presentation</a>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="education.html">Education</a>
+        <a href="https://www.linkedin.com/in/aniriddha/" target="_blank">LinkedIn</a>
+        <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
+    </div>
+    <p style="color: var(--text-secondary);">© 2025 AIN Labs LLC</p>
+</footer>
+
+</body>
+</html>
