@@ -258,6 +258,54 @@
             color: var(--accent-cyan);
         }
 
+        /* ── Resources / downloads list inside card ── */
+        .resources-row {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .resources-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .resources-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.25rem;
+        }
+
+        .resources-list a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .resources-list a::before {
+            content: "↗";
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        .resources-list a:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--text-primary);
+        }
+
         @media (max-width: 900px) {
             .edu-card { grid-template-columns: 1fr; }
             .edu-image-wrap {
@@ -322,6 +370,12 @@
                 <li>[Add highlight — e.g. internship, case competition, or notable project]</li>
                 <li>[Add highlight — e.g. cohort, network, or key learning]</li>
             </ul>
+            <div class="resources-row">
+                <div class="resources-label">Artifacts</div>
+                <ul class="resources-list">
+                    <li><a href="artifacts/Navigating-AI-Careers-and-GTM-Strategies_UC-Davis-MSBA.pptx" download>Navigating AI Careers &amp; Go-To-Market Strategies — UC Davis MSBA (PPTX)</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
