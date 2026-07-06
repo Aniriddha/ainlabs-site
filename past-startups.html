@@ -165,6 +165,14 @@
             line-height: 1.6;
         }
 
+        .startup-loc {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+            margin-top: 0.6rem;
+        }
+
         .startup-header {
             display: flex;
             align-items: center;
@@ -207,7 +215,25 @@
             font-size: 1.15rem;
             color: var(--text-secondary);
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0 0 1.2rem;
+        }
+
+        .award-chip {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .startup-desc {
@@ -364,97 +390,118 @@
 <section style="margin-top: 80px;">
     <h2 class="section-title">My Journey</h2>
     <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 900px; line-height: 1.8; margin-bottom: 0.5rem;">
-        A career spanning industrial manufacturing in India to semiconductor giants and AI startups in Silicon Valley — 2006 to present.
+        A resilient tech entrepreneur with experience across mechanical, thermal, electronics, semiconductors, generative AI, media, robotics, and agentic AI — bringing a rare cross-disciplinary perspective to the future of physical AI. 2006 to present.
     </p>
+
+    <!-- ────────────── TECH CAREER — UNITED STATES ────────────── -->
+    <div class="era-label">Tech Career — United States</div>
+
+    <!-- Stealth AI Startup [Dec 2025 – Apr 2026] -->
+    <div class="startup-card">
+        <div class="startup-year">Dec 2025 — Apr 2026<div class="startup-loc">San Francisco, CA</div></div>
+        <div class="startup-content">
+            <div class="startup-name">Stealth AI Startup</div>
+            <div class="startup-role">Cofounder — CRO</div>
+            <p class="startup-desc">
+                Built a multilingual data licensing platform sourcing private, compliance-first enterprise datasets from healthcare and telecom institutions across Latin America and India for AI model training.
+            </p>
+            <ul class="startup-bullets">
+                <li>Secured a data-sharing partnership with 20+ hospitals in Argentina and India covering 5M+ longitudinal clinical records and 40M diagnostic imaging files across a 10-year archive, fully de-identified and PHI/PII compliant</li>
+                <li>Engaged a 450-person Latin American operations partner for annotation, compliance, and licensing</li>
+                <li>Initiated pre-seed fundraising with angel investors while pursuing POC conversations with Anthropic, Cohere, Gemini, Mistral, and OpenAI</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Reka AI [Sept 2024 – Oct 2025] -->
+    <div class="startup-card">
+        <div class="startup-year">Sept 2024 — Oct 2025<div class="startup-loc">San Francisco, CA</div></div>
+        <div class="startup-content">
+            <div class="startup-header">
+                <img class="startup-logo" src="images/reka/Reka main image.png" alt="Reka AI">
+                <div class="startup-name">Reka AI</div>
+            </div>
+            <div class="startup-role">Global Sales &amp; Partnerships Lead &nbsp;|&nbsp; Series A ($180M)</div>
+            <p class="startup-desc">
+                Series A-funded multimodal, agentic Vision &amp; Speech AI startup. Joined as an early GTM hire to build global revenue from the ground up across enterprise and defense verticals.
+            </p>
+            <ul class="startup-bullets">
+                <li>Led combined GTM with NVIDIA, Dell, HPE, Axis, Hanwha Vision, TD Synnex, Qualcomm, ARM, Carahsoft, and Inventec driving multimillion-dollar AI deployments</li>
+                <li>Built a qualified pipeline exceeding $20M and closed multimillion-dollar pilots across agentic AI, robotics, autonomous driving, defense, healthcare, fintech, retail, advanced manufacturing, EV, and telecom</li>
+                <li>Successfully launched Reka AI's Vision Agent (multimodal proactive monitoring) and Speech Agent (edge-deployable, high-accuracy transcription and translation AI)</li>
+                <li>Generated leads and partnerships from global media &amp; tech events in Las Vegas, Mexico, Tampa, San Jose, Middle East, Houston, and San Francisco — conducting executive-level demos and workshops</li>
+                <li>Drove end-to-end enterprise deployments navigating complex procurement cycles, technical evaluations, and executive stakeholder alignment</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Renesas Electronics [July 2023 – Mar 2024] -->
+    <div class="startup-card">
+        <div class="startup-year">July 2023 — Mar 2024<div class="startup-loc">Milpitas, CA</div></div>
+        <div class="startup-content">
+            <div class="startup-header">
+                <img class="startup-logo" src="images/renesas/Renesas main image.png" alt="Renesas Electronics">
+                <div class="startup-name">Renesas Electronics</div>
+            </div>
+            <div class="startup-role">Key Account Manager — Apple</div>
+            <p class="startup-desc">
+                World-leading semiconductor manufacturer. Managed one of the most strategic global accounts across AirPods, Vision Pro AR/VR, Apple Watch, and Beats audio divisions.
+            </p>
+            <ul class="startup-bullets">
+                <li>Generated over $35M in opportunities and drove more than $15M in revenue with compelling value propositions</li>
+                <li>Led IoT solution design-ins with Apple's AirPods, Vision Pro AR/VR, Watch, and Beats audio teams — coordinating engineering, business unit verticals, sales, and GSM teams</li>
+                <li>Streamlined distributor and contract manufacturer relationships; reduced lead times by 45% from prototype to mass production, ensuring alignment with Apple's engineering cycles</li>
+                <li>Devices: Analog &amp; mixed-signal Power ICs, FGIC, BLE, Load Switches, DC-DC converters, Buck-Boost, WiFi, Bluetooth, NFC, high-performance graphics, Vision AI, temp and humidity sensors</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Micron Technology [June 2022 – June 2023] -->
+    <div class="startup-card">
+        <div class="startup-year">June 2022 — June 2023<div class="startup-loc">Folsom, CA</div></div>
+        <div class="startup-content">
+            <div class="startup-header">
+                <img class="startup-logo" src="images/micron/Micron main image.png" alt="Micron Technology">
+                <div class="startup-name">Micron Technology</div>
+            </div>
+            <div class="startup-role">Business Development Intern (Part-time) &amp; Industrial Segment Marketing Intern</div>
+            <p class="startup-desc">
+                Global leader in memory and storage semiconductors — DRAM, NAND, and NOR Flash. Contributed across two roles: industrial segment marketing and business development for emerging tech verticals.
+            </p>
+            <ul class="startup-bullets">
+                <li>Managed over $8M in crucial accounts using AI-driven sales strategies across Urban Air Mobility, Robotics, 5G, and IoT sectors</li>
+                <li>Built relationships with robotics &amp; auto companies: Zoox, Waymo, Rivian, Lucid, and Tesla to understand market trends and drive design-ins</li>
+                <li>Spearheaded cross-functional GTM initiatives leveraging AI for market analysis for Lab 126, Bose, Sonos, Ring, Razer, Eero, Synaptics, and Hesai</li>
+                <li>Identified a $650M+ total addressable market — Electric charging scooters $200M, charging stations $215M, Urban Air Mobility eVTOLs $350M</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- ────────────── EARLY CAREER — INDIA ────────────── -->
     <div class="era-label">Early Career — India</div>
 
-    <!-- Forbes Marshall [2006–2008] -->
+    <!-- Flamingo Industries [Jan 2013 – July 2021] -->
     <div class="startup-card">
-        <div class="startup-year">2006 — 2008</div>
-        <div class="startup-content">
-            <div class="startup-header">
-                <img class="startup-logo" src="images/forbes-marshall/Forbes main image.png" alt="Forbes Marshall">
-                <div class="startup-name">Forbes Marshall</div>
-            </div>
-            <div class="startup-role">[Add your role / title here]</div>
-            <p class="startup-desc">
-                Forbes Marshall is India's leading industrial process control and steam engineering company, headquartered in Pune. [Add a description of your work, responsibilities, and key learnings during this period.]
-            </p>
-            <ul class="startup-bullets">
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Eco Industries [2008–2010] -->
-    <div class="startup-card">
-        <div class="startup-year">2008 — 2010</div>
-        <div class="startup-content">
-            <div class="startup-header">
-                <img class="startup-logo" src="images/eco-industries/Azura main image.png" alt="Eco Industries">
-                <div class="startup-name">Eco Industries</div>
-            </div>
-            <div class="startup-role">[Add your role / title here]</div>
-            <p class="startup-desc">
-                [Add a description of your work at Eco Industries — what the company did, your role, and what you built or achieved here.]
-            </p>
-            <ul class="startup-bullets">
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Agasti Energy [2010–2012] -->
-    <div class="startup-card">
-        <div class="startup-year">May 2010 — Dec 2012</div>
-        <div class="startup-content">
-            <div class="startup-header">
-                <img class="startup-logo" src="images/Agasti/Agasti main image.png" alt="Agasti Energy">
-                <div class="startup-name">Agasti Energy Pvt Ltd</div>
-            </div>
-            <div class="startup-role">[Add your role / title here]</div>
-            <p class="startup-desc">
-                [Add a description of your work at Agasti Energy — what the company did, your role, and what you built or achieved here.]
-            </p>
-            <ul class="startup-bullets">
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-            </ul>
-            <div class="resources-row">
-                <div class="resources-label">Resources</div>
-                <ul class="resources-list">
-                    <li><a href="images/Agasti/Agasti corporate Brochure_latest.pdf" target="_blank" rel="noopener">Corporate Brochure (PDF)</a></li>
-                    <li><a href="images/Agasti/Blue flyer final01.pdf" target="_blank" rel="noopener">Blue Flyer (PDF)</a></li>
-                    <li><a href="images/Agasti/briquetting systems.pdf" target="_blank" rel="noopener">Briquetting Systems (PDF)</a></li>
-                    <li><a href="images/Agasti/Agasti Company Profile.doc" target="_blank" rel="noopener">Company Profile (DOC)</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Flamingo Industries [2013–2020] -->
-    <div class="startup-card">
-        <div class="startup-year">2013 — 2020</div>
+        <div class="startup-year">Jan 2013 — July 2021<div class="startup-loc">Mumbai, Maharashtra, India</div></div>
         <div class="startup-content">
             <div class="startup-header">
                 <img class="startup-logo" src="images/flamingo-industries/LOGO.jpg" alt="Flamingo Industries">
                 <div class="startup-name">Flamingo Industries</div>
             </div>
-            <div class="startup-role">[Add your role / title here]</div>
+            <div class="startup-role">Founder</div>
+            <div class="award-chips">
+                <span class="award-chip">Best Energy Startup — AEEE 2018</span>
+                <span class="award-chip">Top 10 Cleantech — GCIP USA 2018</span>
+                <span class="award-chip">D-Labs Accelerator — ISB India 2018</span>
+                <span class="award-chip">Patent: Hot Air Recirculation in Furnaces</span>
+            </div>
             <p class="startup-desc">
-                [Add a description of your work at Flamingo Industries — the packaged water plant operations, manufacturing scale, team size, and what you built over these seven years in Bhiwandi, Maharashtra.]
+                Recognized by world-renowned startup accelerators and VCs. Built an innovative thermal engineering and industrial manufacturing startup focused on energy-efficient heating systems.
             </p>
             <ul class="startup-bullets">
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
+                <li>Filed a patent for hot air circulation in aluminum recycling furnaces; activated markets across six segments, led a high-performing team of 25+ engineers</li>
+                <li>Secured and developed 150+ enterprise accounts including Alfa Laval, Mitsubishi, BASF, Sandoz, Dow Chemicals, Forbes Marshall, Merck, Novartis, Thermax, Larsen &amp; Toubro, Praj Industries, and Kirloskar</li>
+                <li>Led strategic sales, enablement, and marketing teams driving lead generation and revenue growth in steam boilers, heat exchangers, and high-pressure pipe fittings — 18% CAGR</li>
             </ul>
         </div>
         <!-- Product photos -->
@@ -486,79 +533,73 @@
         </div>
     </div>
 
-    <!-- ────────────── TECH CAREER — UNITED STATES ────────────── -->
-    <div class="era-label">Tech Career — United States</div>
-
-    <!-- Micron Technology [2022–2023] -->
+    <!-- Agasti Energy [May 2010 – Dec 2012] -->
     <div class="startup-card">
-        <div class="startup-year">2022 — 2023</div>
+        <div class="startup-year">May 2010 — Dec 2012<div class="startup-loc">Mumbai, Maharashtra, India</div></div>
         <div class="startup-content">
             <div class="startup-header">
-                <img class="startup-logo" src="images/micron/Micron main image.png" alt="Micron Technology">
-                <div class="startup-name">Micron Technology</div>
+                <img class="startup-logo" src="images/Agasti/Agasti main image.png" alt="Agasti Energy">
+                <div class="startup-name">Agasti Energy Pvt. Ltd.</div>
             </div>
-            <div class="startup-role">[Add your role / title here]</div>
+            <div class="startup-role">Head of Sales</div>
+            <div class="award-chips">
+                <span class="award-chip">Sakal Times — Entrepreneur of the Year 2009</span>
+            </div>
             <p class="startup-desc">
-                Micron Technology is a global leader in memory and storage semiconductor solutions, known for DRAM, NAND, and NOR Flash products. [Add a description of your work, the team you worked with, and what you contributed.]
+                Built an end-to-end biomass briquetting business from scratch — sourcing agro-waste, ensuring 4,000 kcal/kg energy value, and guaranteeing uninterrupted biomass supply for industrial boilers across pharma, chemical, and FMCG sectors.
             </p>
             <ul class="startup-bullets">
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
-                <li>[Add key achievement or responsibility]</li>
+                <li>Secured $12M+ in annual contracts with Fortune 500 clients: PepsiCo, Coca-Cola, Kraft Foods, Kellogg's, Clariant, Solvay, Bayer, Sandoz, Pfizer, Forbes, 3M, Merck, BASF, Lupin, Fresenius Kabi, Godrej, Gharda Chemicals, Thermofisher</li>
+                <li>Delivered 50% cost savings vs. oil/gas while enabling clients to cut more than 100 million tons of CO₂ emissions</li>
+            </ul>
+            <div class="resources-row">
+                <div class="resources-label">Resources</div>
+                <ul class="resources-list">
+                    <li><a href="images/Agasti/Agasti corporate Brochure_latest.pdf" target="_blank" rel="noopener">Corporate Brochure (PDF)</a></li>
+                    <li><a href="images/Agasti/Blue flyer final01.pdf" target="_blank" rel="noopener">Blue Flyer (PDF)</a></li>
+                    <li><a href="images/Agasti/briquetting systems.pdf" target="_blank" rel="noopener">Briquetting Systems (PDF)</a></li>
+                    <li><a href="images/Agasti/Agasti Company Profile.doc" target="_blank" rel="noopener">Company Profile (DOC)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eco Industries [May 2008 – March 2010] -->
+    <div class="startup-card">
+        <div class="startup-year">May 2008 — March 2010<div class="startup-loc">Kolhapur, Maharashtra, India</div></div>
+        <div class="startup-content">
+            <div class="startup-header">
+                <img class="startup-logo" src="images/eco-industries/Azura main image.png" alt="Eco Industries">
+                <div class="startup-name">Eco Industries</div>
+            </div>
+            <div class="startup-role">Partner</div>
+            <p class="startup-desc">
+                Founded and scaled a semi-automatic packaged drinking water plant, handling all aspects from ground up — licensing, equipment procurement, lab setup, staff training, and full manufacturing operations.
+            </p>
+            <ul class="startup-bullets">
+                <li>Built distribution networks across rural and urban markets from scratch</li>
+                <li>Managed end-to-end plant operations including quality control, compliance, and supply chain logistics</li>
             </ul>
         </div>
     </div>
 
-    <!-- Renesas Electronics [2023–2024] -->
+    <!-- Forbes Marshall [Nov 2006 – March 2008] -->
     <div class="startup-card">
-        <div class="startup-year">2023 — 2024</div>
+        <div class="startup-year">Nov 2006 — March 2008<div class="startup-loc">Pune, Maharashtra, India</div></div>
         <div class="startup-content">
             <div class="startup-header">
-                <img class="startup-logo" src="images/renesas/Renesas main image.png" alt="Renesas Electronics">
-                <div class="startup-name">Renesas Electronics</div>
+                <img class="startup-logo" src="images/forbes-marshall/Forbes main image.png" alt="Forbes Marshall">
+                <div class="startup-name">Forbes Marshall</div>
             </div>
-            <div class="startup-role">Key Account Manager — Apple</div>
+            <div class="startup-role">Marketing Engineer</div>
             <p class="startup-desc">
-                Renesas Electronics is a world-leading semiconductor manufacturer. As Key Account Manager for Apple, managed one of the company's most strategic global relationships across consumer product lines including AirPods, Vision Pro, and Apple Watch.
+                India's leading industrial process control and steam engineering company, headquartered in Pune. Began career spanning electronics, steam systems, and industrial process automation.
             </p>
             <ul class="startup-bullets">
-                <li>Generated $35M+ in opportunities; closed $15M+ in revenue across AirPods, Vision Pro, and Apple Watch</li>
-                <li>Led technical discussions with Apple engineering teams on IoT solutions and mixed-signal power ICs</li>
-                <li>Streamlined supply chain, reducing lead times by 45% from prototype to mass production</li>
+                <li>Programmed and soldered ICs using MATLAB; assembled and tested printed circuit boards and touchscreen panels</li>
+                <li>Installed and repaired dust-monitoring systems at major steel and aluminum plants across India</li>
+                <li>Applied Six Sigma and lean principles to achieve 70% faster production cycles through Kaizen methodologies</li>
             </ul>
-        </div>
-    </div>
-
-    <!-- Reka AI [2024–2025] -->
-    <div class="startup-card">
-        <div class="startup-year">2024 — 2025</div>
-        <div class="startup-content">
-            <div class="startup-header">
-                <img class="startup-logo" src="images/reka/Reka main image.png" alt="Reka AI">
-                <div class="startup-name">Reka AI</div>
-            </div>
-            <div class="startup-role">Global Sales & Partnerships Lead | Series A ($180M)</div>
-            <p class="startup-desc">
-                Reka AI is a frontier multimodal AI company building Vision Agent and Speech Agent solutions for enterprise and defense deployments. Joined as an early GTM hire to build global revenue from the ground up.
-            </p>
-            <ul class="startup-bullets">
-                <li>Led technical GTM for Vision Agent and Speech Agent across DOD, smart cities, and critical infrastructure</li>
-                <li>Built strategic partnerships with NVIDIA, Dell, HPE, Qualcomm, and ARM driving multi-million dollar deployments</li>
-                <li>Architected POCs for intrusion detection, traffic management, and predictive maintenance with engineering teams</li>
-                <li>Represented Reka at global events, conducting technical demos and workshops</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Stealth Startup [2025–2026] -->
-    <div class="startup-card">
-        <div class="startup-year">2025 — 2026</div>
-        <div class="startup-content">
-            <div class="startup-name">Stealth Startup</div>
-            <div class="startup-role">Undisclosed</div>
-            <p class="startup-desc">
-                Currently operating in stealth mode. Details and announcements coming soon.
-            </p>
         </div>
     </div>
 
@@ -566,7 +607,7 @@
 
 <footer>
     <div class="footer-links">
-        <a href="https://linkedin.com/in/aniriddha-wakchaure" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/aniriddha/" target="_blank">LinkedIn</a>
         <a href="mailto:aniriddha.wakchaure@gmail.com">Email</a>
     </div>
     <p style="color: var(--text-secondary);">© 2025 AIN Labs LLC</p>
