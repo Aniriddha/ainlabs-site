@@ -214,6 +214,28 @@
 
         .artifact-download:hover { opacity: 0.85; }
 
+        .artifact-rubric {
+            display: grid;
+            gap: 0.9rem;
+            margin: 0.25rem 0 1.5rem;
+        }
+
+        .rubric-label {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .artifact-rubric p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
         .artifact-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -295,9 +317,24 @@
         <div class="artifact-content">
             <div class="artifact-title">Navigating AI Careers &amp; Go-To-Market Strategies</div>
             <div class="artifact-venue">UC Davis MSBA Program</div>
-            <p class="artifact-desc">
-                A presentation for UC Davis MSBA students on building a career in AI. It covers the AI industry landscape, go-to-market strategy for AI products, and lessons from taking frontier AI solutions to enterprise and defense customers.
-            </p>
+            <div class="artifact-rubric">
+                <div>
+                    <span class="rubric-label">Objective</span>
+                    <p>To give UC Davis MSBA students a practical view of building a career in AI and taking AI products from concept to revenue.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Process</span>
+                    <p>Distilled lessons from go-to-market roles at Reka AI, Renesas, and Micron into a structured talk covering the AI industry landscape, career paths, and enterprise sales strategy.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Tools</span>
+                    <p>Microsoft PowerPoint.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Value Proposition</span>
+                    <p>Shows the ability to translate real field experience into teaching material and communicate AI strategy clearly to a graduate business audience.</p>
+                </div>
+            </div>
             <a class="artifact-download" href="artifacts/Navigating-AI-Careers-and-GTM-Strategies_UC-Davis-MSBA.pptx" download>⬇ Download Presentation</a>
         </div>
     </div>
@@ -311,9 +348,24 @@
         <div class="artifact-content">
             <div class="artifact-title">Walk the Talk AI Booking Bot</div>
             <div class="artifact-venue">Indiana Wesleyan University, Machine Learning Course</div>
-            <p class="artifact-desc">
-                An AI booking assistant built for Walk the Talk, a speaker bureau concept. The bot books speakers, checks availability, and answers questions around the clock. The infographics below show the marketing campaign and the booking process behind it.
-            </p>
+            <div class="artifact-rubric">
+                <div>
+                    <span class="rubric-label">Objective</span>
+                    <p>To practice deep interviewing, AI prompt engineering, and AI system design by building a working Speaker's Bureau booking bot as a graded team project.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Process</span>
+                    <p>Interviewed teammates to uncover their passions beyond the resume, used generative AI to write rousing TED Talk introductions and professional speaker profiles, compiled the profiles into a knowledge base, and built a booking agent in Google AI Studio with a strict system prompt grounded only in that data. The team then produced the marketing and process infographics entirely with AI tools and demonstrated the bot live in class with unscripted audience queries.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Tools</span>
+                    <p>Google AI Studio, generative AI assistants for interview synthesis and speaker profiles, AI image generation for both infographics.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Value Proposition</span>
+                    <p>Proves hands-on skill in prompt engineering, grounding a chatbot in custom data, and pairing a working AI product with AI-generated marketing, from discovery interviews to a live demo.</p>
+                </div>
+            </div>
             <a class="artifact-download" href="https://aistudio.google.com/apps/c06c144e-0d8a-4b1d-b9f7-2739bee80ac9?showPreview=true&amp;showAssistant=true&amp;fullscreenApplet=true" target="_blank" rel="noopener">🤖 Try the Chatbot</a>
             <div class="artifact-gallery">
                 <a href="artifacts/walk-the-talk-marketing-infographic.png" target="_blank" rel="noopener">
@@ -325,6 +377,37 @@
                     <span>Process Infographic</span>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- AI History Timeline -->
+    <div class="artifact-card">
+        <div class="artifact-meta">
+            2026
+            <div class="artifact-type">Presentation · PPTX</div>
+        </div>
+        <div class="artifact-content">
+            <div class="artifact-title">AI History Timeline</div>
+            <div class="artifact-venue">Indiana Wesleyan University, Machine Learning Course</div>
+            <div class="artifact-rubric">
+                <div>
+                    <span class="rubric-label">Objective</span>
+                    <p>To trace the evolution of artificial intelligence from its origins to today's generative AI era and understand the breakthroughs behind modern machine learning.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Process</span>
+                    <p>Researched the key milestones, papers, and inflection points in AI history, then organized them into a clear chronological visual presentation.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Tools</span>
+                    <p>Microsoft PowerPoint and AI research assistants.</p>
+                </div>
+                <div>
+                    <span class="rubric-label">Value Proposition</span>
+                    <p>Shows the ability to distill decades of technical history into an accessible narrative and demonstrates foundational AI literacy.</p>
+                </div>
+            </div>
+            <a class="artifact-download" href="artifacts/AI-History-Timeline_Aniriddha.pptx" download>⬇ Download Presentation</a>
         </div>
     </div>
 
