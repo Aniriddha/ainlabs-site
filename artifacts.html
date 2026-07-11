@@ -214,6 +214,36 @@
 
         .artifact-download:hover { opacity: 0.85; }
 
+        .artifact-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.75rem;
+            max-width: 560px;
+        }
+
+        .artifact-gallery a {
+            text-decoration: none;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .artifact-gallery img {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .artifact-gallery img:hover {
+            border-color: var(--accent-cyan);
+            transform: scale(1.02);
+        }
+
         @media (max-width: 900px) {
             .artifact-card { grid-template-columns: 1fr; }
             .artifact-meta {
@@ -269,6 +299,32 @@
                 A presentation for UC Davis MSBA students on building a career in AI. It covers the AI industry landscape, go-to-market strategy for AI products, and lessons from taking frontier AI solutions to enterprise and defense customers.
             </p>
             <a class="artifact-download" href="artifacts/Navigating-AI-Careers-and-GTM-Strategies_UC-Davis-MSBA.pptx" download>⬇ Download Presentation</a>
+        </div>
+    </div>
+
+    <!-- Walk the Talk AI Booking Bot -->
+    <div class="artifact-card">
+        <div class="artifact-meta">
+            2026
+            <div class="artifact-type">AI Chatbot · Infographics</div>
+        </div>
+        <div class="artifact-content">
+            <div class="artifact-title">Walk the Talk AI Booking Bot</div>
+            <div class="artifact-venue">Indiana Wesleyan University, Machine Learning Course</div>
+            <p class="artifact-desc">
+                An AI booking assistant built for Walk the Talk, a speaker bureau concept. The bot books speakers, checks availability, and answers questions around the clock. The infographics below show the marketing campaign and the booking process behind it.
+            </p>
+            <a class="artifact-download" href="https://aistudio.google.com/apps/c06c144e-0d8a-4b1d-b9f7-2739bee80ac9?showPreview=true&amp;showAssistant=true&amp;fullscreenApplet=true" target="_blank" rel="noopener">🤖 Try the Chatbot</a>
+            <div class="artifact-gallery">
+                <a href="artifacts/walk-the-talk-marketing-infographic.png" target="_blank" rel="noopener">
+                    <img src="artifacts/walk-the-talk-marketing-infographic.png" alt="Walk the Talk marketing infographic">
+                    <span>Marketing Infographic</span>
+                </a>
+                <a href="artifacts/walk-the-talk-process-infographic.png" target="_blank" rel="noopener">
+                    <img src="artifacts/walk-the-talk-process-infographic.png" alt="Walk the Talk process infographic">
+                    <span>Process Infographic</span>
+                </a>
+            </div>
         </div>
     </div>
 
