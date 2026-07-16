@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1640" viewBox="0 0 1080 1640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1230"/>
+      <stop offset="1" stop-color="#1A1040"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4FC3F7"/>
+      <stop offset="0.2" stop-color="#9575CD"/>
+      <stop offset="0.4" stop-color="#F06292"/>
+      <stop offset="0.6" stop-color="#FFB74D"/>
+      <stop offset="0.8" stop-color="#4DB6AC"/>
+      <stop offset="1" stop-color="#AED581"/>
+    </linearGradient>
+    <linearGradient id="titleg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4FC3F7"/>
+      <stop offset="1" stop-color="#B388FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1640" fill="url(#bg)"/>
+
+  <!-- decorative dots -->
+  <g fill="#FFFFFF" opacity="0.06">
+    <circle cx="80" cy="90" r="3"/><circle cx="990" cy="60" r="4"/><circle cx="930" cy="150" r="2"/>
+    <circle cx="140" cy="1560" r="3"/><circle cx="960" cy="1520" r="3"/><circle cx="60" cy="800" r="2"/>
+    <circle cx="1020" cy="860" r="2"/><circle cx="1030" cy="400" r="3"/><circle cx="50" cy="1200" r="3"/>
+  </g>
+
+  <!-- Header -->
+  <text x="540" y="78" text-anchor="middle" font-size="26" letter-spacing="10" fill="#8FA3D0">THE EVOLUTION OF</text>
+  <text x="540" y="140" text-anchor="middle" font-size="52" font-weight="bold" letter-spacing="3" fill="url(#titleg)">ARTIFICIAL INTELLIGENCE</text>
+  <text x="540" y="182" text-anchor="middle" font-size="21" fill="#C8D2EE">From Turing to Generative AI &#183; 1943 to 2025</text>
+
+  <!-- Spine -->
+  <rect x="536" y="230" width="8" height="1290" rx="4" fill="url(#spine)"/>
+
+  <!-- ═══════════ ERA 1 : LEFT ═══════════ -->
+  <circle cx="540" cy="310" r="16" fill="#4FC3F7" stroke="#0B1230" stroke-width="4"/>
+  <rect x="60" y="240" width="440" height="170" rx="14" fill="#141E44" stroke="#4FC3F7" stroke-width="1.5"/>
+  <text x="90" y="278" font-size="22" font-weight="bold" fill="#4FC3F7">1940s&#8211;1950s</text>
+  <text x="90" y="304" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">THE FOUNDATIONS</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="90" y="334"><tspan fill="#4FC3F7" font-weight="bold">1943</tspan>  First neural network model</text>
+    <text x="90" y="358"><tspan fill="#4FC3F7" font-weight="bold">1950</tspan>  Turing Test proposed</text>
+    <text x="90" y="382"><tspan fill="#4FC3F7" font-weight="bold">1956</tspan>  Dartmouth Conference names AI</text>
+  </g>
+
+  <!-- ═══════════ ERA 2 : RIGHT ═══════════ -->
+  <circle cx="540" cy="520" r="16" fill="#9575CD" stroke="#0B1230" stroke-width="4"/>
+  <rect x="580" y="450" width="440" height="170" rx="14" fill="#141E44" stroke="#9575CD" stroke-width="1.5"/>
+  <text x="610" y="488" font-size="22" font-weight="bold" fill="#B39DDB">1960s&#8211;1970s</text>
+  <text x="610" y="514" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">OPTIMISM &amp; FIRST AI WINTER</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="610" y="544"><tspan fill="#B39DDB" font-weight="bold">1966</tspan>  ELIZA, the first chatbot</text>
+    <text x="610" y="568"><tspan fill="#B39DDB" font-weight="bold">1969</tspan>  Shakey the Robot at SRI</text>
+    <text x="610" y="592"><tspan fill="#B39DDB" font-weight="bold">1974</tspan>  First AI Winter, funding dries up</text>
+  </g>
+
+  <!-- ═══════════ ERA 3 : LEFT ═══════════ -->
+  <circle cx="540" cy="730" r="16" fill="#F06292" stroke="#0B1230" stroke-width="4"/>
+  <rect x="60" y="660" width="440" height="170" rx="14" fill="#141E44" stroke="#F06292" stroke-width="1.5"/>
+  <text x="90" y="698" font-size="22" font-weight="bold" fill="#F48FB1">1980s</text>
+  <text x="90" y="724" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">EXPERT SYSTEMS &amp; SECOND WINTER</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="90" y="754"><tspan fill="#F48FB1" font-weight="bold">1980</tspan>  R1/XCON saves DEC $40M a year</text>
+    <text x="90" y="778"><tspan fill="#F48FB1" font-weight="bold">1982</tspan>  Japan's Fifth Generation Project</text>
+    <text x="90" y="802"><tspan fill="#F48FB1" font-weight="bold">1987</tspan>  Second AI Winter begins</text>
+  </g>
+
+  <!-- ═══════════ ERA 4 : RIGHT ═══════════ -->
+  <circle cx="540" cy="940" r="16" fill="#FFB74D" stroke="#0B1230" stroke-width="4"/>
+  <rect x="580" y="870" width="440" height="170" rx="14" fill="#141E44" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="610" y="908" font-size="22" font-weight="bold" fill="#FFCC80">1990s&#8211;2000s</text>
+  <text x="610" y="934" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">STATISTICAL ML REVIVAL</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="610" y="964"><tspan fill="#FFCC80" font-weight="bold">1997</tspan>  Deep Blue defeats Kasparov</text>
+    <text x="610" y="988"><tspan fill="#FFCC80" font-weight="bold">1998</tspan>  LeNet reads handwritten digits</text>
+    <text x="610" y="1012"><tspan fill="#FFCC80" font-weight="bold">2006</tspan>  Hinton coins "deep learning"</text>
+  </g>
+
+  <!-- ═══════════ ERA 5 : LEFT ═══════════ -->
+  <circle cx="540" cy="1150" r="16" fill="#4DB6AC" stroke="#0B1230" stroke-width="4"/>
+  <rect x="60" y="1080" width="440" height="170" rx="14" fill="#141E44" stroke="#4DB6AC" stroke-width="1.5"/>
+  <text x="90" y="1118" font-size="22" font-weight="bold" fill="#80CBC4">2012&#8211;2020</text>
+  <text x="90" y="1144" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">DEEP LEARNING REVOLUTION</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="90" y="1174"><tspan fill="#80CBC4" font-weight="bold">2012</tspan>  AlexNet wins ImageNet on GPUs</text>
+    <text x="90" y="1198"><tspan fill="#80CBC4" font-weight="bold">2016</tspan>  AlphaGo defeats Lee Sedol</text>
+    <text x="90" y="1222"><tspan fill="#80CBC4" font-weight="bold">2017</tspan>  The Transformer is published</text>
+  </g>
+
+  <!-- ═══════════ ERA 6 : RIGHT ═══════════ -->
+  <circle cx="540" cy="1360" r="16" fill="#AED581" stroke="#0B1230" stroke-width="4"/>
+  <rect x="580" y="1290" width="440" height="170" rx="14" fill="#141E44" stroke="#AED581" stroke-width="1.5"/>
+  <text x="610" y="1328" font-size="22" font-weight="bold" fill="#C5E1A5">2020&#8211;Present</text>
+  <text x="610" y="1354" font-size="17" font-weight="bold" fill="#FFFFFF" letter-spacing="2">THE GENERATIVE AI ERA</text>
+  <g font-size="15" fill="#C8D2EE">
+    <text x="610" y="1384"><tspan fill="#C5E1A5" font-weight="bold">2020</tspan>  GPT-3 shows emergent abilities</text>
+    <text x="610" y="1408"><tspan fill="#C5E1A5" font-weight="bold">2022</tspan>  ChatGPT: 100M users in 2 months</text>
+    <text x="610" y="1432"><tspan fill="#C5E1A5" font-weight="bold">2024</tspan>  Agentic AI and reasoning models</text>
+  </g>
+
+  <!-- arrow head at spine end -->
+  <path d="M 540 1545 L 524 1515 L 556 1515 Z" fill="#AED581"/>
+
+  <!-- Footer -->
+  <text x="540" y="1590" text-anchor="middle" font-size="16" fill="#8FA3D0">Aniriddha Wakchaure &#183; AIML-500 Machine Learning Fundamentals &#183; Indiana Wesleyan University</text>
+  <text x="540" y="1616" text-anchor="middle" font-size="14" fill="#5C6B96">Created entirely with AI tools</text>
+</svg>
